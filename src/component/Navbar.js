@@ -87,7 +87,7 @@ function Navbar({name}) {
         </div>
 
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
-          <h3>The Kiet<br/><span>Website Designer</span></h3>
+          <h3>Shahad</h3>
           <ul>
             <DropdownItem img = {profile} text = {"My Profile"}/>
             
