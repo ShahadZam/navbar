@@ -81,23 +81,21 @@ function Navbar({name}) {
                   <Button variant="primary">Sign up</Button> */}
                 
 
-                <Box className='menu-container' ref={menuRef}>
-        <Box className='menu-trigger' onClick={()=>{setOpen(!open)}}>
-        <Image
-    boxSize='10px'
-    objectFit='cover'
-    src={profile}
-    alt='profile'/>
-        </Box>
+            <div className='menu-container' ref={menuRef}>
+        <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
+          <img src={profile}></img>
+        </div>
 
-        <Box className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
-          <Text>{name}</Text>
-          <UnorderedList>
+        <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
+          <h3>The Kiet<br/><span>Website Designer</span></h3>
+          <ul>
             <DropdownItem img = {profile} text = {"My Profile"}/>
+            
             <DropdownItem img = {logout} text = {"Logout"}/>
-          </UnorderedList>
-        </Box>
-      </Box>
+          </ul>
+        </div>
+      </div>
+    
 
                   
                 </HStack>
@@ -111,12 +109,12 @@ function Navbar({name}) {
 }
 
 function DropdownItem(props){
-    return(
-      <List className = 'dropdownItem'>
-        <Image src={props.img}></Image>
-        <Link> {props.text} </Link>
-      </List >
-    );
-  }
+  return(
+    <li className = 'dropdownItem'>
+      <img src={props.img}></img>
+      <a> {props.text} </a>
+    </li>
+  );
+}
 
 export default Navbar
